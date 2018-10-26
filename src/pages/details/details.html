@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      Update Task
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label floating color="primary">Name</ion-label>
+      <ion-input type="text" formControlName="name" class="form-control" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Credits</ion-label>
+      <ion-input type="text" formControlName="credits" class="form-control" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Teacher</ion-label>
+      <ion-input type="text" formControlName="teacher" class="form-control" required></ion-input>
+    </ion-item>
+    <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Save</button>
+  </form>
+  <button class="form-action-button" ion-button block color="danger" (click)="delete()">Delete</button>
+
+</ion-content>
