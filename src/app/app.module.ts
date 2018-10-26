@@ -9,7 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { MenuPage } from '../pages/menu/menu';
 import { DetailsPage } from '../pages/details/details';
-import { NewTaskModalPage } from '../pages/new-task-modal/new-task-modal';
+import { NewSubjectModalPage } from '../pages/new-subject-modal/new-subject-modal';
 
 import { FirebaseService } from '../pages/services/firebase.service';
 import { AuthService } from '../pages/services/auth.service';
@@ -26,7 +26,7 @@ import { environment } from '../environment/environment';
     LoginPage,
     RegisterPage,
     MenuPage,
-    NewTaskModalPage,
+    NewSubjectModalPage,
     DetailsPage
   ],
   imports: [
@@ -43,7 +43,7 @@ import { environment } from '../environment/environment';
     LoginPage,
     RegisterPage,
     MenuPage,
-    NewTaskModalPage,
+    NewSubjectModalPage,
     DetailsPage
   ],
   providers: [

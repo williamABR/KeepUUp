@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
-import { NewTaskModalPage } from '../new-task-modal/new-task-modal';
+import { NewSubjectModalPage } from '../new-subject-modal/new-subject-modal';
 import { DetailsPage } from '../details/details';
 import { LoginPage } from '../login/login';
 
@@ -28,7 +28,7 @@ export class MenuPage {
   }
 
   getData(){
-    this.firebaseService.getTasks()
+    this.firebaseService.getSubjects()
     .then(tasks => {
       this.items = tasks;
     })
@@ -48,7 +48,7 @@ export class MenuPage {
   }
 
   openNewUserModal(){
-    let modal = this.modalCtrl.create(NewTaskModalPage);
+    let modal = this.modalCtrl.create(NewSubjectModalPage);
     modal.onDidDismiss(data => {
       this.getData();
     });

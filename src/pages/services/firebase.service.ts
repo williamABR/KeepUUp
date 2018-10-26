@@ -10,7 +10,11 @@ export class FirebaseService {
   private snapshotChangesSubscription: any;
   constructor(public afs: AngularFirestore){}
 
-  getTasks(){
+  /**
+   * Funciones de CRUD para Subject
+   */
+  //++++++++++++++++++ASIGNATURAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  getSubjects(){//Lista todas las Subject del estudiante que esta loggeado
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
       this.snapshotChangesSubscription = this.afs.collection('users').doc(currentUser.uid).collection('subjects').snapshotChanges()
@@ -26,7 +30,7 @@ export class FirebaseService {
     this.snapshotChangesSubscription.unsubscribe();
   }
 
-  updateTask(taskKey, value){
+  updateSubject(taskKey, value){//Modificar la asginatura con id dado
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
       this.afs.collection('users').doc(currentUser.uid).collection('subjects').doc(taskKey).set(value)
@@ -37,7 +41,7 @@ export class FirebaseService {
     })
   }
 
-  deleteTask(taskKey){
+  deleteSubject(taskKey){//Eliminar asignatura con id dado
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
       this.afs.collection('users').doc(currentUser.uid).collection('subjects').doc(taskKey).delete()
@@ -48,7 +52,7 @@ export class FirebaseService {
     })
   }
 
-  createTask(value){
+  createSubject(value){//Crear una asignatura
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
       this.afs.collection('users').doc(currentUser.uid).collection('subjects').add({
@@ -62,4 +66,5 @@ export class FirebaseService {
       )
     })
   }
+  //++++++++++++++++++FIN-------ASIGNATURAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 }

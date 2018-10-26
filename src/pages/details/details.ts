@@ -47,7 +47,7 @@ export class DetailsPage {
       credits: Number(value.credits),
       teacher: value.teacher
     }
-    this.firebaseService.updateTask(this.item.id,data)
+    this.firebaseService.updateSubject(this.item.id,data)
     .then(
       res => {
         this.viewCtrl.dismiss();
@@ -67,7 +67,7 @@ export class DetailsPage {
         {
           text: 'Yes',
           handler: () => {
-            this.firebaseService.deleteTask(this.item.id)
+            this.firebaseService.deleteSubject(this.item.id)
             .then(
               res => this.viewCtrl.dismiss(),
               err => console.log(err)

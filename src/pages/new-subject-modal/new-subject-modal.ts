@@ -5,10 +5,10 @@ import { FirebaseService } from '../services/firebase.service';
 
 
 @Component({
-  selector: 'page-new-task-modal',
-  templateUrl: 'new-task-modal.html'
+  selector: 'page-new-subject-modal',
+  templateUrl: 'new-subject-modal.html'
 })
-export class NewTaskModalPage {
+export class NewSubjectModalPage {
 
   validations_form: FormGroup;
   loading: any;
@@ -44,7 +44,7 @@ export class NewTaskModalPage {
       credits: Number(value.credits),
       teacher: value.teacher
     }
-    this.firebaseService.createTask(data)
+    this.firebaseService.createSubject(data)
     .then(
       res => {
         this.resetFields();
