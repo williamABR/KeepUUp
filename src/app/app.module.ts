@@ -10,6 +10,7 @@ import { RegisterPage } from '../pages/register/register';
 import { MenuPage } from '../pages/menu/menu';
 import { DetailsPage } from '../pages/details/details';
 import { NewSubjectModalPage } from '../pages/new-subject-modal/new-subject-modal';
+import { NewActivityModalPage } from '../pages/new-activity-modal/new-activity-modal';
 
 import { FirebaseService } from '../pages/services/firebase.service';
 import { AuthService } from '../pages/services/auth.service';
@@ -27,7 +28,8 @@ import { environment } from '../environment/environment';
     RegisterPage,
     MenuPage,
     NewSubjectModalPage,
-    DetailsPage
+    DetailsPage,
+    NewActivityModalPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { environment } from '../environment/environment';
     RegisterPage,
     MenuPage,
     NewSubjectModalPage,
-    DetailsPage
+    DetailsPage,
+    NewActivityModalPage
   ],
   providers: [
     StatusBar,

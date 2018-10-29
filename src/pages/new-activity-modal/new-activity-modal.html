@@ -6,7 +6,7 @@
       </button>
     </ion-buttons>
     <ion-title>
-      Nueva Asignatura
+      Nueva Actividad
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -19,13 +19,16 @@
       <ion-input type="text" formControlName="name" class="form-control" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating color="primary">Creditos</ion-label>
-      <ion-input type="text" formControlName="credits" class="form-control" required></ion-input>
+      <ion-label floating color="primary">Valor %</ion-label>
+      <ion-input type="text" formControlName="value" class="form-control" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label floating color="primary">Profesor</ion-label>
-      <ion-input type="text" formControlName="teacher" class="form-control" required></ion-input>
+      <ion-label floating color="primary">Fecha</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" formControlName="date" class="form-control" required></ion-datetime>
     </ion-item>
     <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Crear</button>
   </form>
 </ion-content>
+
+
+

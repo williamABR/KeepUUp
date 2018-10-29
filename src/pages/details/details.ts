@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ViewController, NavParams, AlertController, LoadingController } from 'ionic-angular';
+import { ViewController, NavParams, AlertController, LoadingController, ModalController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../services/firebase.service';
+import { NewActivityModalPage } from '../new-activity-modal/new-activity-modal';
 
 @Component({
   selector: 'page-details',
@@ -14,6 +15,7 @@ export class DetailsPage {
   loading: any;
 
   constructor(
+    private modalCtrl: ModalController,
     private navParams: NavParams,
     private alertCtrl: AlertController,
     private viewCtrl: ViewController,
@@ -77,5 +79,13 @@ export class DetailsPage {
       ]
     });
     confirm.present();
+  }
+
+  openNewActivityModal(){
+    let modal = this.modalCtrl.create(NewActivityModalPage, { id: this.item.id });
+    modal.onDidDismiss(data => {
+      this.getData();
+    });
+    modal.present();
   }
 }

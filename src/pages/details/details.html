@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="secondary">
     <ion-title>
-      Modificar Asginatura
+      Detalle
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -24,5 +24,6 @@
     <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Guardar</button>
   </form>
   <button class="form-action-button" ion-button block color="danger" (click)="delete()">Eliminar</button>
+  <button ion-button color="secondary"  full (click)="openNewActivityModal()">Añadir Actividad</button>
 
 </ion-content>
