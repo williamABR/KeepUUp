@@ -1,11 +1,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBMemqjYun9bUoa2gWNlPoPsZlTqFL3a3A",
-    authDomain: "keepup-2f31b.firebaseapp.com",
-    databaseURL: "https://keepup-2f31b.firebaseio.com",
-    projectId: "keepup-2f31b",
-    storageBucket: "keepup-2f31b.appspot.com",
-    messagingSenderId: "218470151441"
+    apiKey: "AIzaSyCxdzNkZ7a8GXaMyPZvxQJMuYto1DDJx5M",
+    authDomain: "keepuup-2e15e.firebaseapp.com",
+    databaseURL: "https://keepuup-2e15e.firebaseio.com",
+    projectId: "keepuup-2e15e",
+    storageBucket: "keepuup-2e15e.appspot.com",
+    messagingSenderId: "187621008351"
   }
 };
