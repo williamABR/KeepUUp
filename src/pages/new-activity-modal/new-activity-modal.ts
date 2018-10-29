@@ -44,7 +44,7 @@ export class NewActivityModalPage {
     let data = {
       name: value.name,
       value: Number(value.value),
-      date: value.date
+      date: new Date(value.date)
     }
     this.firebaseService.createActivity(data,this.item.id)
     .then(
