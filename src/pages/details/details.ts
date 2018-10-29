@@ -57,15 +57,15 @@ export class DetailsPage {
 
   delete() {
     let confirm = this.alertCtrl.create({
-      title: 'Confirm',
-      message: 'Do you want to delete ' + this.item.title + '?',
+      title: 'Confirmar',
+      message: 'Quieres eliminar ' + this.item.name + '?',
       buttons: [
         {
           text: 'No',
           handler: () => {}
         },
         {
-          text: 'Yes',
+          text: 'Si',
           handler: () => {
             this.firebaseService.deleteSubject(this.item.id)
             .then(

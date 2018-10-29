@@ -19,12 +19,12 @@ export class RegisterPage {
 
   validation_messages = {
    'email': [
-     { type: 'required', message: 'Email is required.' },
-     { type: 'pattern', message: 'Enter a valid email.' }
+     { type: 'required', message: 'Se requiere un email.' },
+     { type: 'pattern', message: 'Por favor ingresa un email válido.' }
    ],
    'password': [
-     { type: 'required', message: 'Password is required.' },
-     { type: 'minlength', message: 'Password must be at least 5 characters long.' }
+     { type: 'required', message: 'Se requiere una contraseña.' },
+     { type: 'minlength', message: 'La contraseña debe ser de mínimo 6 carcteres.' }
    ]
  };
 
@@ -41,7 +41,7 @@ export class RegisterPage {
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       password: new FormControl('', Validators.compose([
-        Validators.minLength(5),
+        Validators.minLength(6),
         Validators.required
       ])),
     });
@@ -52,7 +52,7 @@ export class RegisterPage {
      .then(res => {
        console.log(res);
        this.errorMessage = "";
-       this.successMessage = "Your account has been created. Please log in.";
+       this.successMessage = "Cuenta creada. Ahora inicia sesión";
      }, err => {
        console.log(err);
        this.errorMessage = err.message;
