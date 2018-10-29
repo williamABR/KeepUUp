@@ -7,13 +7,16 @@ import 'firebase/storage';
 @Injectable()
 export class FirebaseService {
 
+  /*
+  Servicio de Firestore.
+  Se manejan todas las funciones para interactuar con la base de datos.
+  Hay grupos de funciones CRUD para las diferentes entidades de la bd.
+  */
   private snapshotChangesSubscription: any;
   constructor(public afs: AngularFirestore){}
 
-  /**
-   * Funciones de CRUD para Subject
-   */
-  //++++++++++++++++++ASIGNATURAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+  //---------------------------------------------------------------------CRUD-ASIGNATURAS-------------------------------------------------------------------------------------
   getSubjects(){//Lista todas las Subject del estudiante que esta loggeado
     return new Promise<any>((resolve, reject) => {
       let currentUser = firebase.auth().currentUser;
@@ -66,5 +69,8 @@ export class FirebaseService {
       )
     })
   }
-  //++++++++++++++++++FIN-------ASIGNATURAS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //-----------------------------------------------------------------FIN-CRUD-ASIGNATURAS-------------------------------------------------------------------------------------
+
+
+
 }
