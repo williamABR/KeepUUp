@@ -61,7 +61,8 @@ export class FirebaseService {
       this.afs.collection('users').doc(currentUser.uid).collection('subjects').add({
         name: value.name,
         credits: Number(value.credits),
-        teacher: value.teacher
+        teacher: value.teacher,
+        days: String(value.days)
       })
       .then(
         res => resolve(res),

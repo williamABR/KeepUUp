@@ -12,7 +12,6 @@ export class NewSubjectModalPage {
 
   validations_form: FormGroup;
   loading: any;
-
   constructor(
     private viewCtrl: ViewController,
     private formBuilder: FormBuilder,
@@ -31,6 +30,7 @@ export class NewSubjectModalPage {
       name: new FormControl('', Validators.required),
       credits: new FormControl('', Validators.required),
       teacher: new FormControl('', Validators.required)
+      //days: new FormControl('', Validators.required)
     });
   }
 
@@ -42,7 +42,8 @@ export class NewSubjectModalPage {
     let data = {
       name: value.name,
       credits: Number(value.credits),
-      teacher: value.teacher
+      teacher: value.teacher,
+      days: String(value.days)
     }
     this.firebaseService.createSubject(data)
     .then(
