@@ -22,6 +22,7 @@ export class FirebaseService {
     this.snapshotChangesSubscription.unsubscribe();
   }
 
+
   //---------------------------------------------------------------------CRUD-ASIGNATURAS-------------------------------------------------------------------------------------
   getSubjects(){//Lista todas las Subject del estudiante que esta loggeado
     return new Promise<any>((resolve, reject) => {
@@ -61,7 +62,17 @@ export class FirebaseService {
       this.afs.collection('users').doc(currentUser.uid).collection('subjects').add({
         name: value.name,
         credits: Number(value.credits),
-        teacher: value.teacher
+        teacher: value.teacher,
+        days: String(value.days),
+        finalScore: 0
+
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+      this.afs.collection('users').doc(currentUser.uid).set({
+        credits:20
       })
       .then(
         res => resolve(res),
@@ -78,7 +89,8 @@ export class FirebaseService {
       this.afs.collection('users').doc(currentUser.uid).collection('subjects').doc(subjectKey).collection('activities').add({
         name: value.name,
         value: value.value,
-        date: value.date
+        date: value.date,
+        score: value.score
       })
       .then(
         res => resolve(res),

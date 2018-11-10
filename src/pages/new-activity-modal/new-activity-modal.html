@@ -26,6 +26,10 @@
       <ion-label floating color="primary">Fecha</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY" formControlName="date" class="form-control" required></ion-datetime>
     </ion-item>
+    <ion-item>
+        <ion-label floating color="primary">Calificacion</ion-label>
+        <ion-input type="text" formControlName="score" class="form-control" required></ion-input>
+      </ion-item>
     <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Crear</button>
   </form>
 </ion-content>

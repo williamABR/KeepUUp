@@ -26,6 +26,18 @@
       <ion-label floating color="primary">Profesor</ion-label>
       <ion-input type="text" formControlName="teacher" class="form-control" required></ion-input>
     </ion-item>
+    <ion-item>
+        <ion-label floating color="primary">Dias de la Semana</ion-label>
+        <ion-select multiple="true">
+          <ion-option value = "Lun">Lunes</ion-option>
+          <ion-option value = "Mar">Martes</ion-option>
+          <ion-option value = "Mie">Miercoles</ion-option>
+          <ion-option value = "Jue">Jueves</ion-option>
+          <ion-option value = "Vie">Viernes</ion-option>
+          <ion-option value = "Sab">Sabado</ion-option>
+          <ion-option value = "Dom">Domingo</ion-option>
+        </ion-select>
+      </ion-item>
     <button class="form-action-button" ion-button block type="submit" [disabled]="!validations_form.valid">Crear</button>
   </form>
 </ion-content>

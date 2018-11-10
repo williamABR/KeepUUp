@@ -42,7 +42,8 @@ export class NewSubjectModalPage {
     let data = {
       name: value.name,
       credits: Number(value.credits),
-      teacher: value.teacher
+      teacher: value.teacher,
+      days: String(value.days)
     }
     this.firebaseService.createSubject(data)
     .then(
